@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frazão Advogados | Milvan Frazão</title>
+<meta name="description" content="Frazão Advogados — Seu direito com segurança, experiência e compromisso. Atendimento em Caieiras, Francisco Morato, Franco da Rocha e região.">
+<meta name="theme-color" content="#222D4D">
+<meta property="og:title" content="Frazão Advogados | Milvan Frazão">
+<meta property="og:description" content="Seu direito com segurança, experiência e compromisso.">
+<meta property="og:image" content="https://raw.githubusercontent.com/pauloddev/frazaoadvogados/main/img/og.jpg">
+<meta property="og:image:secure_url" content="https://raw.githubusercontent.com/pauloddev/frazaoadvogados/main/img/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo Frazão Advogados e Associados">
+<meta property="og:site_name" content="Frazão Advogados">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Frazão Advogados | Milvan Frazão">
+<meta name="twitter:description" content="Seu direito com segurança, experiência e compromisso.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/pauloddev/frazaoadvogados/main/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/logo-frazao.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#222D4D;
+  --navy-2:#1A2340;
+  --navy-3:#2B3860;
+  --gold:#D9B77E;
+  --gold-2:#F1DBB0;
+  --gold-3:#A9834A;
+  --ink:#EEF0F6;
+  --muted:#B7BDD0;
+  --grad-gold:linear-gradient(135deg,#F3DEB4 0%,#D9B77E 40%,#A9834A 75%,#E9CF9B 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Montserrat',system-ui,sans-serif;
+  background:var(--navy);
+  color:var(--ink);
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+
+/* ---------- INTRO ---------- */
+#intro{
+  position:fixed;inset:0;z-index:100;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .9s ease, visibility .9s ease;
+}
+#intro.hide{opacity:0;visibility:hidden}
+.intro-logo{
+  position:relative;width:min(62vw,300px);aspect-ratio:1;
+  opacity:0;transform:scale(.82);filter:blur(10px);
+  animation:logoIn 1.5s cubic-bezier(.2,.8,.2,1) .25s forwards;
+}
+.intro-logo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.intro-logo::after{ /* brilho dourado passando */
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:linear-gradient(115deg,transparent 42%,rgba(255,236,200,.22) 50%,transparent 58%);
+  background-size:250% 100%;background-position:150% 0;
+  mix-blend-mode:screen;
+  animation:shine 1.3s ease 1.5s forwards;
+}
+.intro-ring{
+  position:absolute;width:min(72vw,350px);aspect-ratio:1;border-radius:50%;
+  border:1px solid rgba(217,183,126,.0);
+  animation:ring 2s ease .6s forwards;
+}
+.intro-line{
+  position:absolute;bottom:calc(50% - min(44vw,215px));
+  height:1px;width:0;background:var(--grad-gold);
+  animation:line 1s ease 1.4s forwards;
+}
+@keyframes logoIn{to{opacity:1;transform:scale(1);filter:blur(0)}}
+@keyframes shine{to{background-position:-50% 0}}
+@keyframes ring{0%{transform:scale(.7);border-color:rgba(217,183,126,0)}50%{border-color:rgba(217,183,126,.55)}100%{transform:scale(1.12);border-color:rgba(217,183,126,0)}}
+@keyframes line{to{width:min(40vw,180px)}}
+
+/* ---------- PÁGINA ---------- */
+.page{
+  max-width:480px;margin:0 auto;position:relative;
+  padding-bottom:40px;
+}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
+body.ready .reveal{opacity:1;transform:none}
+body.ready .d1{transition-delay:.05s}
+body.ready .d2{transition-delay:.18s}
+body.ready .d3{transition-delay:.3s}
+body.ready .d4{transition-delay:.42s}
+body.ready .d5{transition-delay:.54s}
+body.ready .d6{transition-delay:.66s}
+body.ready .d7{transition-delay:.78s}
+body.ready .d8{transition-delay:.9s}
+
+/* Hero */
+.hero{position:relative;width:100%;aspect-ratio:1099/1263;overflow:hidden}
+.hero img.photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(34,45,77,.35) 0%,rgba(34,45,77,0) 14%,rgba(34,45,77,0) 45%,rgba(34,45,77,.55) 72%,var(--navy) 97%);
+}
+.top{display:flex;justify-content:center;padding:22px 0 36px}
+.top img{width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;outline:1px solid rgba(217,183,126,.45);outline-offset:4px}
+.hero .badge{
+  position:absolute;top:16px;left:50%;transform:translateX(-50%);z-index:2;
+  width:84px;height:84px;border-radius:50%;overflow:hidden;
+  box-shadow:0 8px 28px rgba(0,0,0,.35);
+  outline:1px solid rgba(217,183,126,.5);outline-offset:3px;
+}
+.hero .badge img{width:100%;height:100%;object-fit:cover;display:block}
+
+.head{text-align:center;padding:0 24px;margin-top:-78px;position:relative;z-index:2}
+.kicker{
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600;
+}
+h1{
+  font-family:'Cinzel',serif;font-weight:700;
+  font-size:clamp(30px,8.5vw,40px);letter-spacing:.06em;line-height:1.1;margin:10px 0 6px;
+  background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.firm{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.2em;color:var(--ink);font-weight:500}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px auto 16px;width:220px}
+.divider span{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider span:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+.divider i{width:7px;height:7px;transform:rotate(45deg);background:var(--gold);display:block}
+.tagline{font-size:15px;line-height:1.55;color:var(--ink);font-weight:500;max-width:340px;margin:0 auto}
+.sub{font-size:13px;color:var(--muted);margin-top:8px;font-style:italic}
+
+/* Botões */
+.links{padding:28px 20px 0;display:flex;flex-direction:column;gap:12px}
+.btn{
+  position:relative;display:grid;grid-template-columns:48px 1fr 22px;align-items:center;gap:14px;
+  min-height:68px;padding:10px 16px 10px 10px;border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid rgba(217,183,126,.32);
+  overflow:hidden;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease;
+}
+.btn::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg,transparent 30%,rgba(241,219,176,.16) 50%,transparent 70%);
+  transform:translateX(-120%);transition:transform .7s ease;
+}
+.btn:hover::before{transform:translateX(120%)}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);border-color:var(--gold);background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03))}
+.btn:active{transform:scale(.985)}
+.btn .ic{
+  width:48px;height:48px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:var(--navy-2);border:1px solid rgba(217,183,126,.35);color:var(--gold);
+}
+.btn .ic svg{width:22px;height:22px}
+.btn .tx strong{display:block;font-size:15px;font-weight:600;letter-spacing:.01em;color:#fff}
+.btn .tx small{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.btn .arr{color:var(--gold);opacity:.8}
+.btn.primary{background:var(--grad-gold);border-color:transparent}
+.btn.primary .ic{background:rgba(34,45,77,.92);border-color:rgba(34,45,77,.9)}
+.btn.primary .tx strong{color:var(--navy-2)}
+.btn.primary .tx small{color:#3d3a33}
+.btn.primary .arr{color:var(--navy-2)}
+
+/* Info */
+.info{margin:28px 20px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{
+  border:1px solid rgba(217,183,126,.22);border-radius:14px;padding:16px 14px;
+  background:rgba(26,35,64,.6);display:flex;flex-direction:column;
+}
+.card h3{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;color:var(--gold);margin-bottom:10px;font-weight:600}
+.card p{font-size:12.5px;line-height:1.55;color:var(--ink)}
+.card p span{color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:600}
+.status i{width:7px;height:7px;border-radius:50%;display:block}
+.status.open{color:#7EE2A8}.status.open i{background:#7EE2A8;box-shadow:0 0 0 4px rgba(126,226,168,.15)}
+.status.closed{color:#F0A3A3}.status.closed i{background:#F0A3A3}
+
+.pillars{margin:28px 20px 0;text-align:center}
+.pillars h3{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.22em;color:var(--gold);margin-bottom:12px;font-weight:600}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chips span{
+  font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;
+  padding:11px 8px;border-radius:999px;border:1px solid rgba(217,183,126,.28);color:var(--ink)
+}
+
+footer{text-align:center;margin-top:34px;padding:0 24px}
+footer .area{font-size:12px;color:var(--muted);line-height:1.6}
+footer .copy{font-size:11px;color:#7F88A6;margin-top:14px;letter-spacing:.04em}
+footer .copy a{color:var(--gold)}
+
+@media (min-width:520px){
+  .page{padding-top:28px}
+  .hero{border-radius:22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-delay:0s!important;transition:none!important}
+}
+</style>
+</head>
+<body class="lock">
+
+<!-- INTRO: logo entrando em cena -->
+<div id="intro" aria-hidden="true">
+  <div class="intro-ring"></div>
+  <div class="intro-logo"><img src="img/logo-frazao.jpg" alt=""></div>
+  <div class="intro-line"></div>
+</div>
+
+<main class="page">
+  <div class="top reveal d1"><img src="img/logo-frazao.jpg" alt="Logo Frazão Advogados e Associados"></div>
+  <section class="hero reveal d1">
+    <img class="photo" src="img/milvan-frazao.jpg" alt="Dr. Milvan Frazão, advogado">
+  </section>
+
+  <header class="head">
+    <p class="kicker reveal d2">Advogado</p>
+    <h1 class="reveal d2">Milvan Frazão</h1>
+    <p class="firm reveal d3">FRAZÃO ADVOGADOS</p>
+    <div class="divider reveal d3"><span></span><i></i><span></span></div>
+    <p class="tagline reveal d3">Seu direito com segurança, experiência e compromisso.</p>
+    <p class="sub reveal d4">Compartilhando conhecimento jurídico.</p>
+  </header>
+
+  <nav class="links">
+    <a class="btn primary reveal d4" href="https://wa.me/551126501645?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.44-9.43a9.38 9.38 0 0 1 9.43 9.44c0 5.2-4.24 9.43-9.44 9.43m8.03-17.46A11.27 11.27 0 0 0 12.05.72C5.8.72.7 5.8.7 12.07c0 2 .52 3.95 1.52 5.67L.6 23.28l5.67-1.49a11.3 11.3 0 0 0 5.43 1.38h.01c6.25 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.33-8.03"/></svg></span>
+      <span class="tx"><strong>Fale pelo WhatsApp</strong><small>(11) 2650-1645 · Atendimento jurídico</small></span>
+      <svg class="arr" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <a class="btn reveal d5" href="tel:+551126501645">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+      <span class="tx"><strong>Ligar para o escritório</strong><small>(11) 2650-1645</small></span>
+      <svg class="arr" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <a class="btn reveal d5" href="https://www.instagram.com/milvanfrazaoadvogado" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r=".9" fill="currentColor" stroke="none"/></svg></span>
+      <span class="tx"><strong>Instagram</strong><small>@milvanfrazaoadvogado</small></span>
+      <svg class="arr" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <a class="btn reveal d6" href="https://www.facebook.com/profile.php?id=61550974381928" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21.5v-8h2.7l.4-3.2h-3.1V8.3c0-.9.26-1.55 1.57-1.55h1.67V3.9a22 22 0 0 0-2.44-.13c-2.41 0-4.06 1.47-4.06 4.18v2.35H7.5v3.2h2.73v8z"/></svg></span>
+      <span class="tx"><strong>Facebook</strong><small>Frazão Advogados</small></span>
+      <svg class="arr" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <a class="btn reveal d6" href="mailto:advogadosfrazao@gmail.com?subject=Atendimento%20jur%C3%ADdico">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span>
+      <span class="tx"><strong>E-mail</strong><small>advogadosfrazao@gmail.com</small></span>
+      <svg class="arr" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <a class="btn reveal d6" href="https://www.google.com/maps/search/?api=1&query=Rua+Doutor+Armando+Pinto%2C+140%2C+Centro%2C+Caieiras+-+SP%2C+07700-175" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+      <span class="tx"><strong>Como chegar</strong><small>Rua Dr. Armando Pinto, 140 · Caieiras</small></span>
+      <svg class="arr" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+  </nav>
+
+  <section class="info reveal d7">
+    <div class="card">
+      <h3>ENDEREÇO</h3>
+      <p>Rua Doutor Armando Pinto, 140<br><span>Centro · Caieiras - SP<br>CEP 07700-175</span></p>
+    </div>
+    <div class="card">
+      <h3>HORÁRIO</h3>
+      <p>Seg. a sex.<br>08:30 às 17:30<br><span>Sáb. e dom.: fechado</span></p>
+      <span class="status" id="status"><i></i><em style="font-style:normal"></em></span>
+    </div>
+  </section>
+
+  <section class="pillars reveal d8">
+    <h3>NO NOSSO INSTAGRAM</h3>
+    <div class="chips">
+      <span>Reels jurídicos</span>
+      <span>Bastidores</span>
+      <span>Conteúdo educativo</span>
+      <span>Marca pessoal</span>
+    </div>
+  </section>
+
+  <footer class="reveal d8">
+    <p class="area">Atendimento em Caieiras, Francisco Morato,<br>Franco da Rocha e região.</p>
+    <p class="copy">Frazão Advogados — Sociedade Individual de Advogados<br>Desenvolvido por <a href="https://logotopdesign.com" target="_blank" rel="noopener">Logotop Design</a></p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  // Intro: logo entra em cena e depois revela a página
+  var intro=document.getElementById('intro');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(function(){
+    intro.classList.add('hide');
+    document.body.classList.remove('lock');
+    document.body.classList.add('ready');
+  }, reduce?200:3000);
+
+  // Status aberto/fechado (horário de Brasília)
+  try{
+    var now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Sao_Paulo'}));
+    var d=now.getDay(), m=now.getHours()*60+now.getMinutes();
+    var open=d>=1&&d<=5&&m>=510&&m<1050;
+    var s=document.getElementById('status');
+    s.className='status '+(open?'open':'closed');
+    s.querySelector('em').textContent=open?'Aberto agora':'Fechado agora';
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
