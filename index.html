@@ -129,12 +129,43 @@ h1{
   background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .firm{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.2em;color:var(--ink);font-weight:500}
-.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px auto 16px;width:220px}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto 16px;width:220px}
 .divider span{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
 .divider span:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
 .divider i{width:7px;height:7px;transform:rotate(45deg);background:var(--gold);display:block}
 .tagline{font-size:15px;line-height:1.55;color:var(--ink);font-weight:500;max-width:340px;margin:0 auto}
 .sub{font-size:13px;color:var(--muted);margin-top:8px;font-style:italic}
+
+
+/* Plantão */
+.plantao{
+  display:block;position:relative;margin:20px auto 0;max-width:440px;text-align:center;
+  padding:20px 18px 18px;border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(217,183,126,.16),rgba(217,183,126,.05));
+  border:1.5px solid var(--gold);
+  box-shadow:0 0 0 4px rgba(217,183,126,.08),0 14px 34px rgba(0,0,0,.28);
+}
+.plantao::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg,transparent 35%,rgba(241,219,176,.18) 50%,transparent 65%);
+  background-size:250% 100%;animation:sweep 4.5s ease-in-out infinite;
+}
+@keyframes sweep{0%{background-position:150% 0}60%,100%{background-position:-50% 0}}
+.plantao .tag{
+  display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;
+  background:var(--grad-gold);color:var(--navy-2);font-size:11.5px;font-weight:700;letter-spacing:.16em;
+}
+.plantao .tag i{width:8px;height:8px;border-radius:50%;background:#C0392B;display:block;animation:pulse 1.4s ease infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(192,57,43,.7)}100%{box-shadow:0 0 0 9px rgba(192,57,43,0)}}
+.plantao h2{
+  font-family:'Cinzel',serif;font-weight:700;font-size:22px;letter-spacing:.08em;margin:12px 0 8px;
+  background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.plantao p{font-size:14px;line-height:1.55;color:#fff;font-weight:500;position:relative}
+.plantao .cta{
+  display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2);position:relative
+}
 
 /* Botões */
 .links{padding:28px 20px 0;display:flex;flex-direction:column;gap:12px}
@@ -223,6 +254,13 @@ footer .copy a{color:var(--gold)}
     <p class="kicker reveal d2">Advogado</p>
     <h1 class="reveal d2">Milvan Frazão</h1>
     <p class="firm reveal d3">FRAZÃO ADVOGADOS</p>
+    <a class="plantao reveal d3" href="https://wa.me/551126501645?text=Ol%C3%A1%2C%20preciso%20de%20atendimento%20no%20plant%C3%A3o%2024h." target="_blank" rel="noopener">
+      <span class="tag"><i></i>PLANTÃO 24H</span>
+      <h2>Final de Semana</h2>
+      <p>Plantão 24h para atendimento, flagrante delito, autuações, reintegrações e manutenção de posse.</p>
+      <span class="cta">Chamar no plantão
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
     <div class="divider reveal d3"><span></span><i></i><span></span></div>
     <p class="tagline reveal d3">Seu direito com segurança, experiência e compromisso.</p>
     <p class="sub reveal d4">Compartilhando conhecimento jurídico.</p>
@@ -273,7 +311,7 @@ footer .copy a{color:var(--gold)}
     </div>
     <div class="card">
       <h3>HORÁRIO</h3>
-      <p>Seg. a sex.<br>08:30 às 17:30<br><span>Sáb. e dom.: fechado</span></p>
+      <p>Seg. a sex.<br>08:30 às 17:30<br><span>Fim de semana: plantão 24h</span></p>
       <span class="status" id="status"><i></i><em style="font-style:normal"></em></span>
     </div>
   </section>
@@ -312,7 +350,9 @@ footer .copy a{color:var(--gold)}
     var open=d>=1&&d<=5&&m>=510&&m<1050;
     var s=document.getElementById('status');
     s.className='status '+(open?'open':'closed');
-    s.querySelector('em').textContent=open?'Aberto agora':'Fechado agora';
+    var wk=(d===0||d===6);
+    if(wk){open=true;s.className='status open';}
+    s.querySelector('em').textContent=wk?'Plantão 24h agora':(open?'Aberto agora':'Fechado agora');
   }catch(e){}
 })();
 </script>
